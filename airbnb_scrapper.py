@@ -37,11 +37,9 @@ for url in urls_extraidas:
 	with open('path/airbnb/'+str(matchregex)+'.html', 'w') as f:
 		f.write(browser.page_source)
 
-
 #Abre el json de los reviews con el key sacado de la url que devuelve airbnb (buscar en "herramientas del desarrollador" -> Network).
 #Lo abre una vez, busca el count, y setea el offset de cada review, vuelve a entrar cambiando el offset.
 #Lo parsea con la librería json para sacar el reviews count.
-#Se puede hacer seteando de ante mano una cantidad de reviews (por ej. 100)
 
 for url in urls_extraidas:
 	matchregex = regex.match(url).group(1)
@@ -53,13 +51,14 @@ for url in urls_extraidas:
 	count = data['metadata']['reviews_count']
 	with codecs.open('path/airbnb/'+str(matchregex)+'-'+str(offset)+'.json', 'w','utf-8') as ff:
 		ff.write(pre)
+#Sigue recorriendo las páginas variando el número del offset. Se puede evitar esto seteando de ante mano una cantidad máxima de reviews (por ej. 100)
 	for n in range(1,int(count/cantidad)+1):
 		offset = n*cantidad
-		browser.get('https://www.airbnb.com.ar/api/v2/reviews?key=d306zoyjsyarp7ifhu67rjxn52tv0t20&currency=ARS&locale=es-419&listing_id='+matchregex+'&role=guest&_format=for_p3&_limit=' + str(cantidad) + '&_offset=' + str(offset) + '&_order=language_country')
+		browser.get('https://www.airbnb.com.ar/api/v2/reviews?key=d306zoyjsyarp7ifhu67rjxn52tv0t20&currency=ARS&locale=es-419&listing_id='+chicho+'&role=guest&_format=for_p3&_limit=' + str(cantidad) + '&_offset=' + str(offset) + '&_order=language_country')
 		pre = browser.find_element_by_tag_name("pre").text
 		data = json.loads(pre)
 		count = data['metadata']['reviews_count']
-		with codecs.open('path/airbnb/'+str(matchregex)+'-'+str(offset)+'.json', 'w','utf-8') as ff:
+		with codecs.open('/Users/juliamilanese/Desktop/airbnb/'+str(chicho)+'-'+str(offset)+'.json', 'w', 'utf-8') as ff:
 			ff.write(pre)
 	
 	
