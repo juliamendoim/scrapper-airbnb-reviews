@@ -31,10 +31,10 @@ for file in os.listdir(datos_path):
 		i += 1
 	documento.save(str('reviewsdocx/'+str(file[0:-5])+'.docx'))
 
-#O, se pueden volcar en un .txt (acá, filtra por idioma)
-if y == 'es':
-			with codecs.open('/path/airbnb/txt/'+str(file[0:-5])+str(i)+'.txt','w', 'utf-8') as f:
-				f.write(str(x))
+#O, se pueden volcar en un .txt (acá, filtra por idioma) - descomentar
+#if y == 'es':
+#	with codecs.open('/path/airbnb/txt/'+str(file[0:-5])+str(i)+'.txt','w', 'utf-8') as f:
+#		f.write(str(x))
 
 
 
