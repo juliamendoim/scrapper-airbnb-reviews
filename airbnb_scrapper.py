@@ -22,7 +22,6 @@ for n in range(0,17):
 	for link in soup.findAll('a', href=True):
 	    x = link.get('href')
 	    if '/rooms' in x:
-	    	print(x)
 	    	urls_extraidas.append(x)
 
 #Compila la regex que extrae el número de aviso que va a usar cuando nombre los archivos
