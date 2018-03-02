@@ -9,7 +9,7 @@
 - webdriver
 - docx
 
-2- Bajar el wevdriver de Chrome que usa Selenium
+2- Bajar el webdriver de Chrome que usa Selenium
 
 ## Ejecución
 
