@@ -23,6 +23,6 @@
 
 2- El archivo "airbnb_reviews_json_parser_to_docx.py":
 
--Parsea el .json y guarda algunos campos en un docx (o en un txt).
+- Parsea el .json y guarda algunos campos en un docx (o en un txt).
 
 - Se pueden filtrar distintos campos del .json de las reviews modificando el array (data["reviews"][i]["comments"])
