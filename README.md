@@ -1,6 +1,6 @@
 # scrapper-airbnb-reviews
 
-##Instalación
+## Instalación
 
 1- Bajar e instalar con pip las siguientes librerías de Python
 
@@ -11,7 +11,7 @@ docx
 
 2- Bajar el wevdriver de Chrome que usa Selenium
 
-##Ejecución
+## Ejecución
 
 1- El archivo "airbnb_scrapper.py" primero usa selenium (una librería de testing) para abrir cada link de Airbnb.
 Guarda los archivos html de donde se extraen las reviews (se puede comentar esta parte para que no los guarde)
